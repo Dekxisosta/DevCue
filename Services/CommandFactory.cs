@@ -36,6 +36,7 @@ public class CommandFactory
         {
             CommandType.Help => new HelpCommand(new CommandDiscovery()),
             CommandType.NotFound => new NotFoundCommand(),
+            CommandType.Version => new VersionCommand(new VersionService()),
             _ => new NotFoundCommand()
         };
     }

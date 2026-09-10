@@ -23,7 +23,7 @@ public sealed class HelpCommand : Command
             if(commandInfo.Aliases.Length==0) continue;
 
             Console.WriteLine(
-                $"{string.Join(", ", commandInfo.Aliases),-20} | {commandInfo.Description}"
+                $"{string.Join(", ", commandInfo.Aliases.OrderBy(alias => alias.Length)),-30} | {commandInfo.Description}"
             );
             
         }
