@@ -1,5 +1,8 @@
 namespace DevCue.Types;
 
-public enum CommandType{
-    NotFound
+public enum CommandType
+{
+    NotFound,
+    Help
+    
 }
