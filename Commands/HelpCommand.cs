@@ -12,7 +12,7 @@ public sealed class HelpCommand : Command
     }
     public static CommandInfo Info => new(
         CommandType.Help,
-        ["help", "-h"],
+        ["help", "-h", "--help"],
         "List all available commands"
     );
     public override void Execute(string[] args)
