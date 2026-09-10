@@ -17,15 +17,16 @@ public sealed class HelpCommand : Command
     );
     public override void Execute(string[] args)
     {
-        Console.WriteLine("All available commands, type devcue <command alias> <...>");   
+        Console.WriteLine("\nAll available commands, type devcue <command alias> <...>");   
         foreach (CommandInfo commandInfo in _discoveryService.GetCommandsWithDefinitions())
         {
-            
+            if(commandInfo.Aliases.Length==0) continue;
+
             Console.WriteLine(
-                $"{string.Join(", ", commandInfo.Aliases):%.15}" 
-                + " "
-                + $"{commandInfo.Description}"
+                $"{string.Join(", ", commandInfo.Aliases),-20} | {commandInfo.Description}"
             );
+            
         }
+        Console.WriteLine();
     }
 }
